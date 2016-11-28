@@ -274,6 +274,9 @@ public class StatusBar extends SystemUI implements DemoMode,
     public static final String SYSTEM_DIALOG_REASON_RECENT_APPS = "recentapps";
     static public final String SYSTEM_DIALOG_REASON_SCREENSHOT = "screenshot";
 
+    private static final String QS_TILE_TITLE_VISIBILITY =
+            "system:" + Settings.System.QS_TILE_TITLE_VISIBILITY;
+
     private static final String BANNER_ACTION_CANCEL =
             "com.android.systemui.statusbar.banner_action_cancel";
     private static final String BANNER_ACTION_SETUP =
@@ -907,6 +910,8 @@ public class StatusBar extends SystemUI implements DemoMode,
         mColorExtractor.addOnColorsChangedListener(this);
         mStatusBarStateController.addCallback(this,
                 SysuiStatusBarStateController.RANK_STATUS_BAR);
+
+        mTunerService.addTunable(this, QS_TILE_TITLE_VISIBILITY);
 
         mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
         mDreamManager = IDreamManager.Stub.asInterface(
@@ -4643,6 +4648,14 @@ public class StatusBar extends SystemUI implements DemoMode,
         mAssistManagerLazy.get().startAssist(args);
     }
     // End Extra BaseStatusBarMethods.
+
+    @Override
+    public void onTuningChanged(String key, String newValue) {
+        switch (key) {
+            case QS_TILE_TITLE_VISIBILITY:
+                break;
+        }
+    }
 
     public NotificationGutsManager getGutsManager() {
         return mGutsManager;
