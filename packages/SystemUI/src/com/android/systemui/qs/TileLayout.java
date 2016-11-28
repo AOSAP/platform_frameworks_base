@@ -10,6 +10,7 @@ import android.provider.Settings;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+import android.content.ContentResolver;
 
 import com.android.systemui.R;
 import com.android.systemui.qs.QSPanel.QSTileLayout;
@@ -95,6 +96,7 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
 
     protected void addTileView(TileRecord tile) {
         addView(tile.tileView);
+        tile.tileView.textVisibility();
     }
 
     @Override
@@ -114,13 +116,23 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
 
     public boolean updateResources() {
         final Resources res = mContext.getResources();
-        mCellHeight = mContext.getResources().getDimensionPixelSize(R.dimen.qs_tile_height);
+        if (Settings.System.getIntForUser(resolver,
+                Settings.System.QS_TILE_TITLE_VISIBILITY, 1,
+                UserHandle.USER_CURRENT) == 1) {
+            mCellHeight = mContext.getResources().getDimensionPixelSize(R.dimen.qs_tile_height);
+        } else {
+            mCellHeight = mContext.getResources().getDimensionPixelSize(R.dimen.qs_tile_height_wo_label);
+        }
         mCellMarginHorizontal = res.getDimensionPixelSize(R.dimen.qs_tile_margin_horizontal);
         mCellMarginVertical= res.getDimensionPixelSize(R.dimen.qs_tile_margin_vertical);
         mCellMarginTop = res.getDimensionPixelSize(R.dimen.qs_tile_margin_top);
+        for (TileRecord record : mRecords) {
+            record.tileView.textVisibility();
+        }
         mMaxAllowedRows = Math.max(1, getResources().getInteger(R.integer.quick_settings_max_rows));
         if (mLessRows) mMaxAllowedRows = Math.max(mMinRows, mMaxAllowedRows - 1);
         updateSettings();
+        requestLayout();
         return false;
     }
 
