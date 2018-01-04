@@ -181,4 +181,8 @@
     <!-- QS Header data usage info -->
     <string name="usage_data">used</string>
 
+    <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Smart pixels</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Auto-enabled smart pixels</string>
+
 </resources>
