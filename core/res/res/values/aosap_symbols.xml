@@ -106,4 +106,7 @@
    <!-- Ambient notification light color -->
    <java-symbol type="integer" name="config_ambientNotificationDefaultColor" />
 
+    <!-- Whether to send camera status intent -->
+    <java-symbol type="bool" name="config_sendCameraStatusIntent" />
+
 </resources>
