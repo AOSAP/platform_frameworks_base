@@ -5839,6 +5839,30 @@ public final class Settings {
          */
         public static final String SMART_PIXELS_ON_POWER_SAVE = "smart_pixels_on_power_save";
 
+         /**
+         * Whether to enable PULSE Edge lights
+         * @hide
+         */
+        public static final String OMNI_PULSE_AMBIENT_LIGHT = "pulse_ambient_light";
+
+         /**
+         * Whether to enable Ambient Edge lights
+         * @hide
+         */
+        public static final String OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED = "ambient_notification_light_enabled";
+
+         /**
+         * Whether to enable Ambient Edge lights
+         * @hide
+         */
+        public static final String OMNI_AMBIENT_NOTIFICATION_LIGHT = "ambient_notification_light";
+
+         /**
+         * Whether Ambient Edge lights are activated
+         * @hide
+         */
+        public static final String OMNI_AMBIENT_NOTIFICATION_LIGHT_ACTIVATED = "ambient_notification_light_activated";
+
         /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
@@ -6364,7 +6388,10 @@ public final class Settings {
          * @hide
          */
         public static final String[] AOSAP_SETTINGS_TO_BACKUP = {
-            // AOSAP_FOO_BAR_BALABALA
+            OMNI_PULSE_AMBIENT_LIGHT,
+            OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED,
+            OMNI_AMBIENT_NOTIFICATION_LIGHT,
+            OMNI_AMBIENT_NOTIFICATION_LIGHT_ACTIVATED,
         };
 
         /**
@@ -6378,7 +6405,10 @@ public final class Settings {
          */
         public static final Map<String, Integer> AOSAP_SETTINGS_VALIDATORS = new ArrayMap<>();
         static {
-            //AOSAP_SETTINGS_VALIDATORS.put(AOSAP_FOO_BAR_BALABALA, 1);
+            AOSAP_SETTINGS_VALIDATORS.put(OMNI_PULSE_AMBIENT_LIGHT, 0);
+            AOSAP_SETTINGS_VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED, 0);
+            AOSAP_SETTINGS_VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT, 0);
+            AOSAP_SETTINGS_VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT_ACTIVATED, 0);
         }
     }
 
