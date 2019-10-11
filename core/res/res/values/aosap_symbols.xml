@@ -204,4 +204,8 @@
      <java-symbol type="style" name="GlobalActionsAnimationXylon" />
      <java-symbol type="style" name="GlobalActionsAnimationCard" />
 
+     <!-- Max. cached processes -->
+  <java-symbol type="integer" name="config_defaultMaxCachedProcesses" />
+  <java-symbol type="integer" name="config_defaultTrimCachedProcesses" />
+
 </resources>
