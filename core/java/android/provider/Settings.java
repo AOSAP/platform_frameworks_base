@@ -5863,6 +5863,12 @@ public final class Settings {
          */
         public static final String OMNI_AMBIENT_NOTIFICATION_LIGHT_ACTIVATED = "ambient_notification_light_activated";
 
+         /**
+         * Whether to use accent color for pulse
+         * @hide
+         */
+        public static final String OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT = "ambient_notification_light_accent";
+
         /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
@@ -6399,6 +6405,7 @@ public final class Settings {
             OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED,
             OMNI_AMBIENT_NOTIFICATION_LIGHT,
             OMNI_AMBIENT_NOTIFICATION_LIGHT_ACTIVATED,
+            OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT,
         };
 
         /**
@@ -6416,6 +6423,7 @@ public final class Settings {
             AOSAP_SETTINGS_VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED, 0);
             AOSAP_SETTINGS_VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT, 0);
             AOSAP_SETTINGS_VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT_ACTIVATED, 0);
+            AOSAP_SETTINGS_VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT, 0);
         }
     }
 
