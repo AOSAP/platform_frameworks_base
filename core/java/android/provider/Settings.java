@@ -6383,6 +6383,13 @@ public final class Settings {
          ***************************/
 
         /**
+         * helper setting to contain the current pulse reason so we can check
+         * if it has been triggered from a notification or a gesture
+         * @hide
+         */
+        public static final String OMNI_PULSE_TRIGGER_REASON = "pulse_trigger_reason";
+
+        /**
          * SettingsBackupAgent will combine its list with this so we dont need
          * to add new things into SettingsProvider SystemSettings
          * @hide
