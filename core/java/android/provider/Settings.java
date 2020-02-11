@@ -5843,31 +5843,45 @@ public final class Settings {
          * Whether to enable PULSE Edge lights
          * @hide
          */
-        public static final String OMNI_PULSE_AMBIENT_LIGHT = "pulse_ambient_light";
+        public static final String OMNI_NOTIFICATION_PULSE = "pulse_ambient_light";
 
          /**
          * Whether to enable Ambient Edge lights
          * @hide
          */
-        public static final String OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED = "ambient_notification_light_enabled";
+        public static final String OMNI_AOD_NOTIFICATION_PULSE = "ambient_notification_light_enabled";
+
 
          /**
-         * Whether to enable Ambient Edge lights
+         * Whether hide everything on aod when  ambient lights are enabled
          * @hide
          */
-        public static final String OMNI_AMBIENT_NOTIFICATION_LIGHT = "ambient_notification_light";
+        public static final String OMNI_AOD_NOTIFICATION_PULSE_CLEAR = "ambient_notification_light_hide_aod";
+
+         /**
+         * Whether to change aod pulse state
+         * @hide
+         */
+        public static final String OMNI_AOD_NOTIFICATION_PULSE_TRIGGER = "ambient_notification_light";
 
          /**
          * Whether Ambient Edge lights are activated
          * @hide
          */
-        public static final String OMNI_AMBIENT_NOTIFICATION_LIGHT_ACTIVATED = "ambient_notification_light_activated";
+        public static final String OMNI_AOD_NOTIFICATION_PULSE_ACTIVATED = "ambient_notification_light_activated";
 
          /**
          * Whether to use accent color for pulse
          * @hide
          */
-        public static final String OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT = "ambient_notification_light_accent";
+        public static final String OMNI_NOTIFICATION_PULSE_ACCENT = "ambient_notification_light_accent";
+
+        /**
+         * helper setting to contain the current pulse reason so we can check
+         * if it has been triggered from a notification or a gesture
+         * @hide
+         */
+        public static final String OMNI_PULSE_TRIGGER_REASON = "pulse_trigger_reason";
 
         /**
          * Keys we no longer back up under the current schema, but want to continue to
@@ -6389,23 +6403,15 @@ public final class Settings {
          ***************************/
 
         /**
-         * helper setting to contain the current pulse reason so we can check
-         * if it has been triggered from a notification or a gesture
-         * @hide
-         */
-        public static final String OMNI_PULSE_TRIGGER_REASON = "pulse_trigger_reason";
-
-        /**
          * SettingsBackupAgent will combine its list with this so we dont need
          * to add new things into SettingsProvider SystemSettings
          * @hide
          */
         public static final String[] AOSAP_SETTINGS_TO_BACKUP = {
-            OMNI_PULSE_AMBIENT_LIGHT,
-            OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED,
-            OMNI_AMBIENT_NOTIFICATION_LIGHT,
-            OMNI_AMBIENT_NOTIFICATION_LIGHT_ACTIVATED,
-            OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT,
+            OMNI_NOTIFICATION_PULSE,
+            OMNI_AOD_NOTIFICATION_PULSE,
+            OMNI_AOD_NOTIFICATION_PULSE_CLEAR,
+            OMNI_NOTIFICATION_PULSE_ACCENT,
         };
 
         /**
@@ -6419,11 +6425,10 @@ public final class Settings {
          */
         public static final Map<String, Integer> AOSAP_SETTINGS_VALIDATORS = new ArrayMap<>();
         static {
-            AOSAP_SETTINGS_VALIDATORS.put(OMNI_PULSE_AMBIENT_LIGHT, 0);
-            AOSAP_SETTINGS_VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED, 0);
-            AOSAP_SETTINGS_VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT, 0);
-            AOSAP_SETTINGS_VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT_ACTIVATED, 0);
-            AOSAP_SETTINGS_VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT, 0);
+            AOSAP_SETTINGS_VALIDATORS.put(OMNI_NOTIFICATION_PULSE, 0);
+            AOSAP_SETTINGS_VALIDATORS.put(OMNI_AOD_NOTIFICATION_PULSE, 0);
+            AOSAP_SETTINGS_VALIDATORS.put(OMNI_AOD_NOTIFICATION_PULSE_CLEAR, 0);
+            AOSAP_SETTINGS_VALIDATORS.put(OMNI_NOTIFICATION_PULSE_ACCENT, 0);
         }
     }
 
