@@ -5895,6 +5895,11 @@ public final class Settings {
          */
         public static final String OMNI_NOTIFICATION_PULSE_COLOR = "ambient_notification_light_color";
 
+         /**
+         * @hide
+         */
+        public static final String OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC = "ambient_notification_light_color_automatic";
+
         /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
@@ -6426,6 +6431,7 @@ public final class Settings {
             OMNI_AOD_NOTIFICATION_PULSE_TIMEOUT,
             OMNI_NOTIFICATION_PULSE_ACCENT,
             OMNI_NOTIFICATION_PULSE_COLOR,
+            OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC,
         };
 
         /**
@@ -6445,6 +6451,7 @@ public final class Settings {
             AOSAP_SETTINGS_VALIDATORS.put(OMNI_AOD_NOTIFICATION_PULSE_TIMEOUT, 1);
             AOSAP_SETTINGS_VALIDATORS.put(OMNI_NOTIFICATION_PULSE_ACCENT, 0);
             AOSAP_SETTINGS_VALIDATORS.put(OMNI_NOTIFICATION_PULSE_COLOR, 1);
+            AOSAP_SETTINGS_VALIDATORS.put(OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC, 1);
         }
     }
 
