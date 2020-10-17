@@ -5489,12 +5489,6 @@ public final class Settings {
          */
         public static final String AOD_NOTIFICATION_PULSE_ACTIVATED = "ambient_notification_light_activated";
 
-         /**
-         * Whether to use accent color for pulse
-         * @hide
-         */
-        public static final String NOTIFICATION_PULSE_ACCENT = "ambient_notification_light_accent";
-
         /**
          * helper setting to contain the current pulse reason so we can check
          * if it has been triggered from a notification or a gesture
@@ -5507,6 +5501,18 @@ public final class Settings {
          * @hide
          */
         public static final String AOD_NOTIFICATION_PULSE_TIMEOUT = "ambient_notification_light_timeout";
+
+         /**
+         * Whether to use accent color for pulse
+         * @hide
+         */
+        public static final String NOTIFICATION_PULSE_ACCENT = "ambient_notification_light_accent";
+
+         /**
+         * Pulse Ambient lights color
+         * @hide
+         */
+        public static final String NOTIFICATION_PULSE_COLOR = "ambient_notification_light_color";
 
         /**
          * Whether to display set of animations when prompting the power menu
