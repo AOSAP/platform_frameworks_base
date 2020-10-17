@@ -5884,6 +5884,12 @@ public final class Settings {
         public static final String OMNI_PULSE_TRIGGER_REASON = "pulse_trigger_reason";
 
         /**
+         * Timeout for ambient pulse in seconds - 0 is no timeout
+         * @hide
+         */
+        public static final String OMNI_AOD_NOTIFICATION_PULSE_TIMEOUT = "ambient_notification_light_timeout";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *
@@ -6411,6 +6417,7 @@ public final class Settings {
             OMNI_NOTIFICATION_PULSE,
             OMNI_AOD_NOTIFICATION_PULSE,
             OMNI_AOD_NOTIFICATION_PULSE_CLEAR,
+            OMNI_AOD_NOTIFICATION_PULSE_TIMEOUT,
             OMNI_NOTIFICATION_PULSE_ACCENT,
         };
 
@@ -6428,6 +6435,7 @@ public final class Settings {
             AOSAP_SETTINGS_VALIDATORS.put(OMNI_NOTIFICATION_PULSE, 0);
             AOSAP_SETTINGS_VALIDATORS.put(OMNI_AOD_NOTIFICATION_PULSE, 0);
             AOSAP_SETTINGS_VALIDATORS.put(OMNI_AOD_NOTIFICATION_PULSE_CLEAR, 0);
+            AOSAP_SETTINGS_VALIDATORS.put(OMNI_AOD_NOTIFICATION_PULSE_TIMEOUT, 1);
             AOSAP_SETTINGS_VALIDATORS.put(OMNI_NOTIFICATION_PULSE_ACCENT, 0);
         }
     }
