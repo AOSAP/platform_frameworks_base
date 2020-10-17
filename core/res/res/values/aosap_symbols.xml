@@ -230,7 +230,9 @@
   <java-symbol type="bool" name="config_hasAlertSlider" />
   <java-symbol type="integer" name="config_alertSliderLocation" />
 
-  <!-- Ambiant Pulse Light -->
-  <java-symbol type="integer" name="config_AmbiantPulseLightColor" />
+  <!-- Ambient Pulse Light -->
+  <java-symbol type="integer" name="pulse_ambient_light_color" />
+  <!-- Ambient notification light color -->
+  <java-symbol type="integer" name="config_ambientNotificationDefaultColor" />
 
 </resources>
