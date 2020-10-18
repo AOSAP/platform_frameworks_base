@@ -708,7 +708,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private PendingIntent mTorchOffPendingIntent;
 
     private boolean mHasPermanentMenuKey;
-    private SwipeToScreenshotListener mSwipeToScreenshot;
+    private OPGesturesListener mOPGestures;
 
     private class PolicyHandler extends Handler {
         @Override
@@ -1967,7 +1967,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         }
 
         mHandler = new PolicyHandler();
-        mSwipeToScreenshot = new SwipeToScreenshotListener(context, new SwipeToScreenshotListener.Callbacks() {
+        mOPGestures = new OPGesturesListener(context, new OPGesturesListener.Callbacks() {
             @Override
             public void onSwipeThreeFinger() {
                 if (!mPocketLockShowing) {
@@ -2201,11 +2201,11 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         if (enable) {
             if (haveEnableGesture) return;
             haveEnableGesture = true;
-            mWindowManagerFuncs.registerPointerEventListener(mSwipeToScreenshot, DEFAULT_DISPLAY);
+            mWindowManagerFuncs.registerPointerEventListener(mOPGestures, DEFAULT_DISPLAY);
         } else {
             if (!haveEnableGesture) return;
             haveEnableGesture = false;
-            mWindowManagerFuncs.unregisterPointerEventListener(mSwipeToScreenshot, DEFAULT_DISPLAY);
+            mWindowManagerFuncs.unregisterPointerEventListener(mOPGestures, DEFAULT_DISPLAY);
         }
     }
 
