@@ -65,6 +65,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
 
+import com.android.internal.util.aosap.PixelPropsUtils;
+
 /**
  * Base class for implementing application instrumentation code.  When running
  * with instrumentation turned on, this class will be instantiated for you
@@ -1232,6 +1234,8 @@ public class Instrumentation {
         Application app = getFactory(context.getPackageName())
                 .instantiateApplication(cl, className);
         app.attach(context);
+        String packageName = app.getPackageName();
+        PixelPropsUtils.setProps(packageName);
         AttestationHooks.initApplicationBeforeOnCreate(app);
         return app;
     }
@@ -1251,6 +1255,8 @@ public class Instrumentation {
         Application app = (Application)clazz.newInstance();
         app.attach(context);
         AttestationHooks.initApplicationBeforeOnCreate(app);
+        String packageName = app.getPackageName();
+        PixelPropsUtils.setProps(packageName);
         return app;
     }
 
