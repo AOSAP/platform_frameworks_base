@@ -206,5 +206,6 @@ public class SecureSettings {
         Settings.Secure.LOCKSCREEN_USE_DOUBLE_LINE_CLOCK,
         Settings.Secure.STATUS_BAR_SHOW_VIBRATE_ICON
         Settings.Secure.DISABLE_SECURE_TILES_ON_LOCKSCREEN,
+        Settings.Secure.SECURE_LOCKSCREEN_QS_DISABLED,
     };
 }
