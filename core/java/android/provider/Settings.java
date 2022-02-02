@@ -11068,8 +11068,16 @@ public final class Settings {
          */
         public static final String LAUNCHER_TASKBAR_EDUCATION_SHOWING =
                 "launcher_taskbar_education_showing";
+        /**
 
         /**
+         * Whether to disable secure qs tiles on lockscreen.
+         * Default 1
+         * @hide
+         */
+        public static final String DISABLE_SECURE_TILES_ON_LOCKSCREEN = "disable_secure_tiles_on_lockscreen";
+        /**
+
          * These entries are considered common between the personal and the managed profile,
          * since the managed profile doesn't get to change them.
          */
