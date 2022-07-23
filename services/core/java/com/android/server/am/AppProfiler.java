@@ -1803,8 +1803,7 @@ public class AppProfiler {
     }
 
     void updateCpuStatsNow() {
-        final boolean monitorPhantomProcs = mService.mSystemReady && FeatureFlagUtils.isEnabled(
-                mService.mContext, SETTINGS_ENABLE_MONITOR_PHANTOM_PROCS);
+        final boolean monitorPhantomProcs = false;
         synchronized (mProcessCpuTracker) {
             mProcessCpuMutexFree.set(false);
             final long now = SystemClock.uptimeMillis();
